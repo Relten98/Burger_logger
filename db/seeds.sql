@@ -1,2 +1,2 @@
-INSERT INTO burger (id, burger_name, devoured)
-VALUES (1, "Baconizer", FALSE,);
+INSERT INTO burger (burger_name, devoured)
+VALUES ("Baconizer", FALSE,);
