@@ -1,5 +1,7 @@
 var mysql = require('mysql');
 
+var exported;
+
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -10,7 +12,7 @@ var con = mysql.createConnection({
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    console.log("WOOOO! YEEEEEAAAAAH BABY That's what I've been waiting for.");
+    console.log("WOOOO! YEEEEEAAAAAH BABY! That's what I've been waiting for.");
   });
 
-  module.exports;
+  module.exports = exported;
