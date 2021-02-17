@@ -1,4 +1,4 @@
-### THE BURGER LOGGER
+# THE BURGER LOGGER
 (2021)
 
 ## BUILT WITH
@@ -7,14 +7,14 @@ Handlebars
 mySQL
 Herouku
 
-## HOW TO USE
+### HOW TO USE
 Simply boot up the linked website to log a few burgers, and change a few paraeters involving them
 
-## INSTALLATION
-No installation required, simply boot up the deployed website (null)
+### INSTALLATION
+No installation required, simply boot up the deployed website (https://relten-burger-logger.herokuapp.com/)
 
-## SCREENSHOT
+### SCREENSHOT
 
-# LINKS
-Repo: (null2)
-Herouku: (null)
+### LINKS
+Repo: https://github.com/Relten98/Burger_logger
+Herouku: https://relten-burger-logger.herokuapp.com/
