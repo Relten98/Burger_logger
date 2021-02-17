@@ -1,15 +1,15 @@
 <div class="row">
     <center>
         <!-- Left side (Burgers Available) -->
-        <div>
-            <h3 class="submitFont">Eat Me!</h3>
-            <div id="borgersAvailable">
+        <div class="col-md-5">
+            <h3 class="submitFont">BORGERS</h3>
+            <div id="burgersAvailable">
                 {{#each burgers}} {{#unless devoured}}
                 <form action="burger/eat/{{id}}" method="POST">
-                    <div>
-                        <li >{{burger_name}}</li>
-                        <span>
-                            <button class="omnom-button" type="submit">OM NOM NOM NOM</button>
+                    <div class="input-group">
+                        <li class="form-control">{{burger_name}}</li>
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger devour-button" type="submit">CONSUME</button>
                         </span>
                     </div>
                 </form>
@@ -17,15 +17,15 @@
             </div>
         </div>
 
-        <div></div>
+        <div class="col-md-2"></div>
 
         <!-- devoured burgers -->
-        <div>
-            <h3>C O N S U M E D:</h3>
-            <div id="Eaten">
+        <div class="col-md-5">
+            <h3 class="submitFont">Already Eaten:</h3>
+            <div id="alreadyEaten">
                 {{#each burgers}} {{#if this.devoured}}
-                <div>
-                    <li>{{this.burger_name}}</li>
+                <div class="input-group">
+                    <li class="form-control">{{this.burger_name}}</li>
                 </div>
                 {{/if}} {{/each}}
             </div>
