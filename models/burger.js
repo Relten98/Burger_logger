@@ -21,6 +21,7 @@ let borger = {
             callback(results);
         });
     }
+}
 
 // Neatly exports everything.
 module.exports = borger; 
