@@ -1,7 +1,7 @@
-// Imports the required information.
 var express = require("express");
-let borger = require('./models/burger.js');
-const express.router();
+var router = express.Router();
+// Imports the model BORGER (burger.js)
+let borger = require('../models/burger.js');
 // And now for the routers
 
 router.get('/', function (req, res) {
