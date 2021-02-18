@@ -1,7 +1,5 @@
 /// Requirements and shiz, lets get that out of the way.
-let maybe = false
-
-let con = require('./connection.js');
+let connection = require("../config/connection.js");
 
 // This is where the fun begins.
 var orm = {
