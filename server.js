@@ -1,5 +1,8 @@
 // The all-important dependencies.
 const express = require("express");
+
+// I forget that you needed to install handlebars OOPS
+let exphbs = require("express-handlebars");
 // Something like, uh, something that's good instead of express, like... Hamburger Time.
 let hamburgertime = express();
 
@@ -18,7 +21,6 @@ hamburgertime.use(express.json());
 // HANDLEBARS
 
 // Sets up the ever important handlebars. Mine aren't pretty.
-let exphbs = require("express-handlebars");
 hamburgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));
 hamburgertime.set("view engine", "handlebars");
 
