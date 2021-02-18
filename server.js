@@ -1,8 +1,7 @@
-// The important dependencies.
+// The all-important dependencies.
 const express = require("express");
-let burgertime = express();
-let ducks = birds
-let birds = 15000;
+// Something like, uh, something that's good instead of express, like... Hamburger Time.
+let hamburgertime = express();
 
 // PORT SET UP
 
@@ -10,25 +9,24 @@ let birds = 15000;
 const PORT = process.env.PORT || 3080;
 
 // Serve static content for the app from the "public" directory in the application directory.
-burgertime.use(express.static("public"));
+hamburgertime.use(express.static("public"));
 
 // Parse request body as JSON
-burgertime.use(express.urlencoded({ extended: true }));
-burgertime.use(express.json());
+hamburgertime.use(express.urlencoded({ extended: true }));
+hamburgertime.use(express.json());
 
 // HANDLEBARS
 
 // Sets up the ever important handlebars. Mine aren't pretty.
 let exphbs = require("express-handlebars");
-burgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));
-burgertime.set("view engine", "handlebars");
+hamburgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));
+hamburgertime.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controller.js");
 
-app.use(routes);
+hamburgertime.use(routes);
 
-app.listen(PORT, function () {
+hamburgertime.listen(PORT, function () {
   console.log("App now listening at localhost:" + PORT);
-  console.log(`Duck goes quack ${ducks}`)
 });
