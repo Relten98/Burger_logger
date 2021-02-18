@@ -1,5 +1,5 @@
 # THE BURGER LOGGER
-(built in 2021, by Relten)
+(Built in 2021, by Relten)
 
 ## BUILT WITH
 Node.js
