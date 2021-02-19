@@ -1,27 +1,25 @@
-// Imports the ORM
-let orm = require('../config/orm.js');
+// import orm.js into burger.js
+var orm = require('../config/orm.js');
 
-// I hope this works....
-// this be the model
-let borger = {
+//call ORM functions
+var borger = {
     selectAll: function (callback) {
-        orm.selectAll(function (results) {
-            callback(results);
+        orm.selectAll(function (res) {
+            callback(res);
         });
     },
 
     insertOne: function (burger_name, callback) {
-        orm.selectAll(burger_name, function (results) {
-            callback(results);
+        orm.insertOne(burger_name, function (res) {
+            callback(res);
         });
     },
 
     updateOne: function (burger_id, callback) {
-        orm.selectAll(burger_id, function (results) {
-            callback(results);
+        orm.updateOne(burger_id, function (res) {
+            callback(res);
         });
     }
-}
+};
 
-// Neatly exports everything.
-module.exports = borger; 
+module.exports = borger;
