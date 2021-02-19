@@ -1,5 +1,9 @@
-var express = require("express");
-var router = express.Router();
+// Set up express
+let express = require("express");
+
+// Router
+let router = express.Router();
+
 // Imports the model BORGER (burger.js)
 let borger = require('../models/burger.js');
 // And now for the routers
