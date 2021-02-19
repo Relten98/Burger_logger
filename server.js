@@ -1,25 +1,34 @@
+// The all-important dependencies.
 let express = require("express");
+// Something like, uh, something that's good instead of express, like... Hamburger Time.
+let hamburgertime = express();
 
-let PORT = process.env.PORT || 8080;
+// PORT SET UP
+let PORT = process.env.PORT || 3080;
 
-// Express set up
-let app = express();
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Serve static content for the app from the "public" directory in the application directory.
+hamburgertime.use(express.static("public"));
 
-// Handlebars
+// Parse request body as JSON
+hamburgertime.use(express.urlencoded({ extended: true }));
+hamburgertime.use(express.json());
+
+// HANDLEBARS
+
+// I forget that you needed to install handlebars OOPS
 let exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// Sets up the ever important handlebars. Mine aren't pretty.
+hamburgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));
+hamburgertime.set("view engine", "handlebars");
 
-app.set("view engine", "handlebars");
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
+// ^ Why did this one work, but not the.... You know what, I am not going to question it. 
 
-// Routes
-let routes = require("../controllers/burgers_controller.js");
+// The magic to officially get this server up and running.
+hamburgertime.use(routes);
 
-app.use(routes);
-
-app.listen(PORT, function () {
-  console.log("Server listening on: http://localhost:" + PORT);
+hamburgertime.listen(PORT, function () {
+  console.log("App now listening at localhost:" + PORT);
 });
