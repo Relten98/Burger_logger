@@ -28,7 +28,7 @@ hamburgertime.set("view engine", "handlebars");
 var router = require("./controllers/burgers_controller.js");
 
 // The magic to officially get this server up and running.
-hamburgertime.use(routes);
+hamburgertime.use(router);
 
 // Gets the server to listen.
 hamburgertime.listen(PORT, function () {
