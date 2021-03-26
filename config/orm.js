@@ -2,7 +2,7 @@
 let connection = require("../config/connection.js");
 
 // This is where the fun begins.
-var orm = {
+let orm = {
     selectAll: function (callback) {
         //This be mySQL Query
         connection.query('SELECT * FROM burgers', function (err, result) {

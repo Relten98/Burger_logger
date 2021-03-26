@@ -6,11 +6,9 @@ let router = express.Router();
 
 // Imports the model BORGER (burger.js)
 let borger = require('../models/burger.js');
+
+
 // And now for the routers
-
-
-// UPDATE: Heck, it's BORGER not burger. That's probably why it doesn't work. What was I thinking?
-
 router.get('/', function (req, res) {
     res.redirect
 });

@@ -2,7 +2,7 @@
 var orm = require('../config/orm.js');
 
 //call ORM functions
-var borger = {
+let borger = {
     selectAll: function (callback) {
         orm.selectAll(function (res) {
             callback(res);
