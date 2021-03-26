@@ -1,6 +1,10 @@
 // Set up express
 let express = require("express");
 
+// Just in case I need them
+let connection = require("../config/connection.js");
+var orm = require('../config/orm.js');
+
 // Router
 let router = express.Router();
 

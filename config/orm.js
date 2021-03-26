@@ -10,7 +10,7 @@ let orm = {
             callback(result);
         });
     },
-    
+
     //add a BORGER
     insertOne: function (burger_name, callback) {
         connection.query('INSERT INTO burgers SET ?',

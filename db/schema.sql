@@ -2,8 +2,7 @@ DROP DATABASE IF EXISTS burgers_db;
 
 CREATE DATABASE burgers_db;
 
-use burgers_db;
-
+USE burgers_db;
 
 CREATE TABLE burger (
 id integer AUTO_INCREMENT,
