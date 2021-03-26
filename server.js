@@ -30,5 +30,5 @@ var routes = require("./controllers/burgers_controller.js");
 hamburgertime.use(routes);
 
 hamburgertime.listen(PORT, function () {
-  console.log("App now listening at localhost:" + PORT);
+  console.log(`App now listening at https//localhost:${PORT}`);
 });
