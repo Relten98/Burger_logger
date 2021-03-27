@@ -1,6 +1,10 @@
 // The all-important dependencies.
 let express = require("express");
 
+// Import routes and give the server access to them.
+// NOTE TO SELF, IT IS ROUTER, NOT ROUTES
+let router = require("./controllers/burgers_controller.js");
+
 // Something like, uh, something that's good instead of express, like... Hamburger Time.
 let hamburgertime = express();
 
@@ -22,10 +26,6 @@ let exphbs = require("express-handlebars");
 // Sets up the ever important handlebars. Mine aren't pretty.
 hamburgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));
 hamburgertime.set("view engine", "handlebars");
-
-// Import routes and give the server access to them.
-// NOTE TO SELF, IT IS ROUTER, NOT ROUTES
-var router = require("./controllers/burgers_controller.js");
 
 // The magic to officially get this server up and running.
 hamburgertime.use(router);
