@@ -3,21 +3,26 @@ var orm = require('../config/orm.js');
 
 //call ORM functions
 let borger = {
-    selectAll: function (callback) {
-        orm.selectAll(function (res) {
-            callback(res);
+    
+    all: function (cb) {
+        orm.all("borger", function (res) {
+            cb(res);
         });
     },
 
-    insertOne: function (burger_name, callback) {
-        orm.insertOne(burger_name, function (res) {
-            callback(res);
+    create: function (cols, vals, cb) {
+        orm.create("borger", cols, vals, function (res) {
+            cb(res);
         });
     },
-
-    updateOne: function (burger_id, callback) {
-        orm.updateOne(burger_id, function (res) {
-            callback(res);
+    update: function (objColVals, condition, cb) {
+        orm.update("borger", objColVals, condition, function (res) {
+            cb(res);
+        });
+    },
+    delete: function (condition, cb) {
+        orm.delete("borger", condition, function (res) {
+            cb(res);
         });
     }
 };

@@ -1,8 +1,10 @@
 // The all-important dependencies.
 let express = require("express");
 
+// HANDLEBARS
+let exphbs = require("express-handlebars");
+
 // Import routes and give the server access to them.
-// NOTE TO SELF, IT IS ROUTER, NOT ROUTES
 let router = require("./controllers/burgers_controller.js");
 
 // Something like, uh, something that's good instead of express, like... Hamburger Time.
@@ -17,11 +19,6 @@ hamburgertime.use(express.static("public"));
 // Parse request body as JSON
 hamburgertime.use(express.urlencoded({ extended: true }));
 hamburgertime.use(express.json());
-
-// HANDLEBARS
-
-// I forget that you needed to install handlebars OOPS
-let exphbs = require("express-handlebars");
 
 // Sets up the ever important handlebars. Mine aren't pretty.
 hamburgertime.engine("handlebars", exphbs({ defaultLayout: "main" }));

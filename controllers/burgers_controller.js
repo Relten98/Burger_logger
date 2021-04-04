@@ -1,40 +1,62 @@
 // Set up express
 let express = require("express");
 
-/*
-// Just in case...
-let connection = require("../config/connection.js");
-var orm = require('../config/orm.js');
-*/
-
 // Router
 let router = express.Router();
 
 // Imports the model BORGER (burger.js)
 let borger = require('../models/burger.js');
 
-
-// And now for the routers
-router.get('/', function (req, res) {
-    res.redirect
+router.get("/", function (req, res) {
+  borger.all(function (data) {
+    var hbsObject = {
+      borger: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
 });
 
-router.get('/index', function (req, res) {
-    borger.selectall(function (data) {
-        res.render('index');
-    });
-
-});
-
-router.post('/burger/create', function (req, res) {
-    borger.insertOne(req.body.burger_name, function () {
-        res.redirect('/index');
-    });
-});
-router.post('/burger/eat/:id', function (req, res) {
-    borger.updateOne(req.params.id, function () {
-        res.redirect('/index');
+router.post("/api/borger", function (req, res) {
+  borger.create([
+    "name", "devoured"
+  ], [
+      req.body.name, req.body.devoured
+    ], function (result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
     });
 });
 
-module.exports = router;
+router.put("/api/borger/:id", function (req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  borger.update({
+    devoured: req.body.devoured
+  }, condition, function (result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+router.delete("/api/borger/:id", function (req, res) {
+  var condition = "id = " + req.params.id;
+
+  borger.delete(condition, function (result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+  
+  // Export routes for server.js to use.
+  module.exports = router;

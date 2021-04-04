@@ -1,6 +1,8 @@
 // Set up MySQL connection.
 let mysql = require("mysql");
 
+let connection;
+
 // Lettuce begin
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -10,7 +12,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: "root",
     password: "password123",
-    database: "burgers_db"
+    database: "burgerizer_db"
   });
 };
 

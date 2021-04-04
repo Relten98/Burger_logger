@@ -5,7 +5,7 @@
             <h3 class="submitFont">BORGERS</h3>
             <div id="burgersAvailable">
                 {{#each burgers}} {{#unless devoured}}
-                <form action="burger/eat/{{id}}" method="POST">
+                <form action="borger/eat/{{id}}" method="POST">
                     <div class="input-group">
                         <li class="form-control">{{burger_name}}</li>
                         <span class="input-group-btn">
