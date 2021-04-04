@@ -4,7 +4,7 @@
         <div class="col-md-5">
             <h3 class="submitFont">BORGERS</h3>
             <div id="burgersAvailable">
-                {{#each burgers}} {{#unless devoured}}
+                {{#each borger}} {{#unless devoured}}
                 <form action="borger/eat/{{id}}" method="POST">
                     <div class="input-group">
                         <li class="form-control">{{burger_name}}</li>
@@ -21,7 +21,7 @@
         <div>
             <h3 class="submitFont">C O N S U M E D:</h3>
             <div id="alreadyEaten">
-                {{#each burgers}} {{#if this.devoured}}
+                {{#each borger}} {{#if this.devoured}}
                 <div class="input-group">
                     <li class="form-control">{{this.burger_name}}</li>
                 </div>
