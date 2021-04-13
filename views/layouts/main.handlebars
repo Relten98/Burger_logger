@@ -9,22 +9,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Custom CSS Styling -->
-    <link rel="stylesheet" href="css/burger_style.css">
+    <link rel="stylesheet" href="assets/css/burger_style.css">
     <title>Burgers Logmaster</title>
 </head>
 
 <body>
     <!-- Page Container -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="cardBack">
         <center>
             <div class="row">
                 <div class="jumbotron">
                     <h1>Burger-o-matic!!!!</h1>
+                    <br>
+                    =====================
+                    <br>
                     <p id="info">Pick a burger from the list. Then proceed to C O N S U M E it.
-                        <br> Don't see a burger you like? Consider looking in the mirror, and commence questioning your life choices up until this point.
-                    <br> Otherwise, simply type in a new burger, click enter, and then consume that instead.
-                    
-                    </p>
+                        <br> If there aren't any burger you like, 
+                    <br>simply type in a new burger, click enter, and then consume that instead.      
+                    </p> =====================
         </center>
         <br>
         <!-- Burger Content from index.handlebars -->
@@ -43,13 +45,13 @@
                         <label for="new_burger" class="submitFont">Create a new burger!</label>
                     </center>
                     <textarea class="form-control" type="text" columns="6" rows="2" id="new_burger required value="
-                        name="burger_name"></textarea>
+                        name="borger_name"></textarea>
                 </div>
                 <div class="col-md-3 "></div>
             </div>
             <!-- Submit Button -->
             <center>
-                <button id="submit-button " type="submit " class="btn">Generate my burger</button>
+                <button id="submit-button" type="submit " class="btn">Generate my burger</button>
             </center>
         </form>
         <br>

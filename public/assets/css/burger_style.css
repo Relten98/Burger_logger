@@ -1,0 +1,46 @@
+html {
+    background-image: linear-gradient(#2E2A3E, #0e0b1a);
+    background-color: #2E2A3E;
+    color: antiquewhite;
+}
+#alreadyEaten {
+    padding: 1%;
+    margin: 2%;
+}
+
+#cardBack {
+    color: black;
+    background-image: linear-gradient(#645c81, #53477e);
+    height: 80%;
+}
+
+.jumbotron {
+    background-color: #f0b3f52f;
+    color: black;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.input-group {
+    background-color: transparent;
+}
+ .form-control {
+    font-weight: bold;
+    border: transparent;
+    padding: 2px;
+    margin: auto;
+    margin-bottom: auto;
+    border-radius: 3px;
+    background-color: wheat;
+}
+.submit-button {
+    color: black;
+    background: #daa520;
+}
+.submit-button {
+padding: 24px;
+}
+
+.btn:hover {
+padding-right: 18px;
+}
