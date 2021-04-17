@@ -1,50 +1,48 @@
-/// Requirements and shiz, lets get that out of the way.
-let connection = require("../config/connection.js");
+var connection = require("../config/connection.js");
 
-function convertSQL(ob) {
-    // ARRRRRRRRAAAYYYY
-    let array = [];
+// selectAll()
+// insertOne()
+// updateOne()
 
+// Helper function for SQL syntax.
+// Let's say we want to pass 3 values into the mySQL query.
+// In order to write the query, we need 3 question marks.
+// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
+// ["?", "?", "?"].toString() => "?,?,?";
+function printQuestionMarks(num) {
+    var arr = [];
 
-    for (let key in ob) {
-        // Some very spicy, but confusing stuff that I am not sure if this is even going to work.
-        // Stores object and key into a special value for easy future calls.
-                let value = ob[key];
+    for (var i = 0; i < num; i++) {
+        arr.push("?");
+    }
 
-                // Call object if it has a unique property
+    return arr.toString();
+}
+
+// Helper function to convert object key/value pairs to SQL syntax
+function objToSql(ob) {
+    var arr = [];
+
+    // loop through the keys and push the key/value as a string int arr
+    for (var key in ob) {
+        var value = ob[key];
+        // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-
-
-            // Splits values so that objects can be properly spaced out when it is printed.
+            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-
-            array.push(key + "=" + value);
+            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+            // e.g. {sleepy: true} => ["sleepy=true"]
+            arr.push(key + "=" + value);
         }
     }
 
-// Stores the array to a string to be showcased in the html
-    return array.toString();
-
+    // translate array of strings to a single comma-separated string
+    return arr.toString();
 }
 
-function printObjects(num) {
-    // ARRRRRRRRRAYYY
-    let array = [];
-
-    // YO-HO-HO
-
-    for (let i = 0; i < num; i++) {
-        array.push("?");
-    }
-
-    // Pushes our array of information to a sting for display purposes.
-    return array.toString();
-}
-
-
-// This is where the fun begins.
+// Object for all our SQL statement functions.
 var orm = {
     all: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
@@ -55,7 +53,6 @@ var orm = {
             cb(result);
         });
     },
-    // Add a borger
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -63,7 +60,7 @@ var orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printObjects(vals.length);
+        queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
         console.log(queryString);
@@ -76,14 +73,12 @@ var orm = {
             cb(result);
         });
     },
-    // Update borgers
+    // An example of objColVals would be {name: panther, sleepy: true}
     update: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
-
-        // Our convert sql function called earlier.
-        queryString += convertSQL(objColVals);
+        queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
 
@@ -96,8 +91,6 @@ var orm = {
             cb(result);
         });
     },
-
-    // Delete a borger :(
     delete: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
@@ -113,5 +106,5 @@ var orm = {
     }
 };
 
-// Exports the information to be called elsewhere.
+// Export the orm object for the model (cat.js).
 module.exports = orm;

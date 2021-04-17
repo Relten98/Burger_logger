@@ -34,32 +34,27 @@
         <br>
         <br>
         <!-- Input New Burgers Form -->
-        <form action="borger/create" method="POST">
-            <!-- Text Area Input -->
-            <div class="row">
-                <!-- Empty Div to help center textarea -->
-                <div class="col-md-3"></div>
-                <!-- Burger Input Box -->
-                <div class="form-group col-md-6">
-                    <center>
-                        <label for="new_burger" class="submitFont">Create a new burger!</label>
-                    </center>
-                    <textarea class="form-control" type="text" columns="6" rows="2" id="new_burger required value="
-                        name="borger_name"></textarea>
-                </div>
-                <div class="col-md-3 "></div>
-            </div>
-            <!-- Submit Button -->
-            <center>
-                <button id="submit-button" type="submit " class="btn">Generate my burger</button>
-            </center>
-        </form>
+ <form class="create-form font-weight-light text-muted" name="myForm" onsubmit="return validateForm()"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="bu"><em>* Don't see what you like? </em><br><br>
+                            <p>Place an order here: </p>
+                        </label>
+                        <input type="text" id="bu" name="name">
+                          <button id="submit-button" type="submit " class="btn">Generate my burger</button>
+                    </div>
+                </form>
         <br>
     </div>
     <footer class="footer">
         <div class="container">
         </div>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Javacript -->
+    <script src="/assets/js/burger.js"></script>yy
 </body>
 
 </html>

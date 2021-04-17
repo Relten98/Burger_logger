@@ -1,11 +1,9 @@
-// Set up express
+// Set up express & Router
 let express = require("express");
-
-// Router
 let router = express.Router();
 
 // Imports the model BORGER (burger.js)
-let borger = require('../models/burger.js');
+let borger = require('../models/borger.js');
 
 router.get("/", function (req, res) {
   borger.all(function (data) {
@@ -30,8 +28,6 @@ router.post("/api/borger", function (req, res) {
 
 router.put("/api/borger/:id", function (req, res) {
   var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
 
   borger.update({
     devoured: req.body.devoured
