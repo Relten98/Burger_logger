@@ -1,5 +1,20 @@
+    <!-- Page Container -->
+    <div class="container-fluid" id="cardBack">
+        <center>
+            <div class="row">
+                <div class="jumbotron">
+                    <h1>Burger-o-matic!!!!</h1>
+                    <br>
+                    =====================
+                    <br>
+                    <p id="info">Pick a burger from the list. Then proceed to C O N S U M E it.
+                        <br> If there aren't any burger you like,
+                        <br>simply type in a new burger, click enter, and then consume that instead.
+                    </p> =====================
+        </center>
 <div class="row">
     <center>
+        
         <!-- Left side (Burgers Available) -->
         <div class="col-md-6">
             <h3 class="submitFont">BURGERS</h3>
@@ -15,6 +30,16 @@
                 </form>
                 {{/unless}} {{/each}}
             </div>
+                    <!-- Input New Burgers Form -->
+            <form class="create-form" name="myForm" onsubmit="return validateForm()" method="POST">
+                <div class="form-group">
+                    <label for="bu"><em> </em><br><br>
+                        <p>Place an order here: </p>
+                    </label>
+                    <input type="text" id="bu" name="name">
+                    <button id="submit-button" type="submit " class="btn btn-danger">Generate my burger</button>
+                </div>
+            </form>
         </div>
 
         <!-- CONSUMED BORGERS -->

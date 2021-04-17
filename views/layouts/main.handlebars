@@ -14,36 +14,11 @@
 </head>
 
 <body>
-    <!-- Page Container -->
-    <div class="container-fluid" id="cardBack">
-        <center>
-            <div class="row">
-                <div class="jumbotron">
-                    <h1>Burger-o-matic!!!!</h1>
-                    <br>
-                    =====================
-                    <br>
-                    <p id="info">Pick a burger from the list. Then proceed to C O N S U M E it.
-                        <br> If there aren't any burger you like, 
-                    <br>simply type in a new burger, click enter, and then consume that instead.      
-                    </p> =====================
-        </center>
         <br>
         <!-- Burger Content from index.handlebars -->
         {{{body}}}
         <br>
         <br>
-        <!-- Input New Burgers Form -->
- <form class="create-form font-weight-light text-muted" name="myForm" onsubmit="return validateForm()"
-                    method="POST">
-                    <div class="form-group">
-                        <label for="bu"><em>* Don't see what you like? </em><br><br>
-                            <p>Place an order here: </p>
-                        </label>
-                        <input type="text" id="bu" name="name">
-                          <button id="submit-button" type="submit " class="btn">Generate my burger</button>
-                    </div>
-                </form>
         <br>
     </div>
     <footer class="footer">
