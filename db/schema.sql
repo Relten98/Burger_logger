@@ -1,12 +1,10 @@
-DROP DATABASE IF EXISTS burgerizer_db;
-
+DROP database IF EXISTS burgerizer_db;
 CREATE DATABASE burgerizer_db;
-
 USE burgerizer_db;
 
-CREATE TABLE borger (
-id integer AUTO_INCREMENT,
-borger_name VARCHAR(30) NOT NULL,
-devoured BOOLEAN NOT NULL,
-PRIMARY KEY (id)
+CREATE TABLE burgers (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+	devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
 );

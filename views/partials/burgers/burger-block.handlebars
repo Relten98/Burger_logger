@@ -1,0 +1,9 @@
+<li>
+	{{name}}
+
+	<button class="change-devoured primary-btn m-1" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}NOM!{{else}}REORDER{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}"><i class="fas fa-times"></i></button>
+</li>
