@@ -18,7 +18,11 @@ html {
     background-image: linear-gradient(#645c81, #53477e);
     height: 80%;
 }
-
+.burgies {
+    color: antiquewhite;
+    font: bold;
+    font-size: medium;
+}
 .jumbotron {
     background-color: #f0b3f52f;
     color: black;
@@ -102,11 +106,7 @@ h5 {
     width: auto;
     padding: 5px 10px;
     margin: 15px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
-    -ms-border-radius: 5px;
+    border-radius: 3px;
     margin-top: 2px;
     cursor: pointer;
 }
@@ -130,10 +130,7 @@ h5 {
 }
 
 .primary-btn {
-    background-image: -moz-linear-gradient(0deg, #fd7e14 0%, #da1a5f 100%);
-    background-image: -webkit-linear-gradient(0deg, #fd7e14 0%, #da1a5f 100%);
-    background-image: -ms-linear-gradient(0deg, #fd7e14 0%, #da1a5f 100%);
-    background-image: -o-linear-gradient(0deg, #fd7e14 0%, #da1a5f 100%);
+background-color: rgb(194, 138, 64);
 }
 
 .primary-btn {
@@ -203,10 +200,6 @@ h5 {
     position: relative;
 }
 
-/*--------------------------------------------------------------
-# Menu
---------------------------------------------------------------*/
-
 .menu {
     text-align: left;
     padding: 35px;
@@ -219,10 +212,6 @@ h5 {
     position: relative;
 }
 
-/*--------------------------------------------------------------
-# Order + Devoured
---------------------------------------------------------------*/
-
 .orderDevoured {
     padding: 20px;
     margin: 10px;
@@ -231,142 +220,4 @@ h5 {
 
 .overflow-visible {
     white-space: initial;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-#footer-text {
-    text-align: center;
-    background-image: url("../img/feature-bg.jpg");
-    color: #ffffff;
-    padding: 35px 10px 23px;
-    margin: 0px;
-    font-size: 12px;
-}
-
-/* i {
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-    line-height: 5.2em !important;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 600;
-    text-align: center;
-} */
-
-.fa-github {
-    color: #000;
-    border-radius: 25px;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    height: 28px;
-    font-size: 15px;
-    padding: 12px;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-    -webkit-font-smoothing: antialiased;
-}
-
-.fa-hamburger, .fa-cookie-bite, .fa-beer, .fa-github {
-    color: #da7abf;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    font-size: 30px;
-    height: 50px;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-    -webkit-font-smoothing: antialiased;
-}
-
-.fab:hover {
-    color: #fff;
-    border-radius: 7px;
-    background: #000;
-}
-
-.fa-github-alt {
-    color: #000;
-    border-radius: 7px;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    font-size: 24px;
-    height: 45px;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-    -webkit-font-smoothing: antialiased;
-}
-
-a span {
-    color: #666;
-    position: absolute;
-    padding: 5px 7px;
-    border-radius: 2px;
-    background: #fff;
-    visibility: hidden;
-    opacity: 0;
-    -o-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/*--------------------------------------------------------------
-# Icon Scroll
---------------------------------------------------------------*/
-
-.icon-scroll, .icon-scroll:before {
-    position: absolute;
-    left: 50%;
-}
-
-.icon-scroll {
-    width: 40px;
-    height: 70px;
-    margin-left: -20px;
-    top: 90%;
-    margin-top: -35px;
-    box-shadow: inset 0 0 0 1px #fff;
-    border-radius: 25px;
-}
-
-.icon-scroll:before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    margin-left: -4px;
-    top: 8px;
-    border-radius: 4px;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-name: scroll;
-}
-
-@keyframes scroll {
-    from {
-        top: 0%;
-        opacity: 0.7;
-    }
-    to {
-        top: 100%;
-        opacity: 0;
-    }
 }
