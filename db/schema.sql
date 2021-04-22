@@ -1,6 +1,6 @@
-DROP database IF EXISTS burgerizer_db;
-CREATE DATABASE burgerizer_db;
-USE burgerizer_db;
+-- DROP database IF EXISTS burgers_db;  // to reset database
+CREATE DATABASE burgers_db;
+USE burgers_db;
 
 CREATE TABLE burgers (
 	id int NOT NULL AUTO_INCREMENT,

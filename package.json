@@ -1,26 +1,26 @@
 {
-  "name": "eat-da-burger",
+  "name": "burger-o-matic",
   "version": "1.0.0",
-  "description": "A restaurant app that lets users input the names of burgers they'd like to eat",
+  "description": "Save and consume burgers",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xmkchen/burger.git"
+    "url": "git+https://github.com/Relten98/Burger_logger.git"
   },
   "keywords": [
     "burgers",
     "food",
-    "nom"
+    "consume"
   ],
-  "author": "kathy chen",
+  "author": "Ty Diezhandino",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xmkchen/burger/issues"
+    "url": "https://github.com/Relten98/Burger_logger"
   },
-  "homepage": "https://github.com/xmkchen/burger#readme",
+  "homepage": "https://github.com/Relten98/Burger_logger#readme",
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
