@@ -10,11 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/Relten98/Burger_logger.git"
   },
-  "keywords": [
-    "burgers",
-    "food",
-    "consume"
-  ],
   "author": "Ty Diezhandino",
   "license": "MIT",
   "bugs": {
