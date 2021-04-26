@@ -12,9 +12,6 @@
   },
   "author": "Ty Diezhandino",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Relten98/Burger_logger"
-  },
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.1.0",
