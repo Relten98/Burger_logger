@@ -1,7 +1,7 @@
 // Set up MySQL connection.
 let mysql = require("mysql");
 
-
+// Main connection
 let connection = mysql.createConnection({
     host: "localhost",
     port: 3306, // note-to-self: database will not connect with 3000
