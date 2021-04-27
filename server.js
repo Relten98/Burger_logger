@@ -5,18 +5,17 @@ const exhandlbars = require("express-handlebars");
 // For express
 const app = express();
 
-let PORT = process.env.PORT || 3000;
 
-// Serve static content for the app from the "public" directory in the application directory.
+// Ports and whatnot
+let PORT = process.env.PORT || 3000;
 app.use(express.static("public"));
-// Parse request body as JSON
+
+// Parse request body as JSON string
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars.
+// Sets the yummy Handlebars.
 app.engine("handlebars", exhandlbars({ defaultLayout: "main" }));
-
-
 app.set("view engine", "handlebars");
 
 
@@ -24,7 +23,7 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 
-
+// Sets the app to Listen
 app.listen(PORT, function () {
   console.log("App now listening at localhost:" + PORT);
 });
