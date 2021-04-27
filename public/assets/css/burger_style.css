@@ -1,8 +1,3 @@
-/*--------------------------- Responsive guide ----------------------*/
-
-/* Medium Layout: 1280px */
-
-/* Tablet Layout: 768px */
 html {
     background-image: linear-gradient(#2E2A3E, #0e0b1a);
     background-color: #2E2A3E;
@@ -53,14 +48,9 @@ padding: 24px;
 .btn:hover {
 padding-right: 18px;
 }
-/* Mobile Layout: 320px */
-
-/* Wide Mobile Layout: 480px */
-
-/* =================================== */
 
 /*  Main
-/* =================================== */
+
 
 body {
     width: 100%;
